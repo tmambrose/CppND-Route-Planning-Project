@@ -66,7 +66,7 @@ int main(int argc, const char **argv)
           	continue;
         }
       	break;
-    };
+    }
   
     while (true) {
         std::cout << "\n\nEnter ending coordinates X and Y (between 0 and 100 separated by a space): ";
@@ -77,7 +77,7 @@ int main(int argc, const char **argv)
           	continue;
         }
       	break;
-    };
+    }
     
     // Build Model.
     RouteModel model{osm_data};
