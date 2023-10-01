@@ -57,11 +57,27 @@ int main(int argc, const char **argv)
     // RoutePlanner object below in place of 10, 10, 90, 90.
     float start_x {}, start_y {}, end_x {}, end_y {};
 
-    std::cout << "\nEnter starting coordinates X and Y: ";
-    std::cin >> start_x >> start_y;
-
-    std::cout << "\nEnter ending coordinates X and Y: ";
-    std::cin >> end_x >> end_y;
+    while (true) {
+        std::cout << "\n\nEnter starting coordinates X and Y (between 0 and 100 separated by a space): ";
+        std::cin >> start_x >> start_y;
+      	if (start_x < 0 || start_x > 100 ||
+            start_y < 0 || start_y > 100) {
+        	std::cout << "Error: coordinate must between 0 and 100.\n";
+          	continue;
+        }
+      	break;
+    };
+  
+    while (true) {
+        std::cout << "\n\nEnter ending coordinates X and Y (between 0 and 100 separated by a space): ";
+        std::cin >> end_x >> end_y;
+      	if (end_x < 0 || end_x > 100 ||
+            end_y < 0 || end_y > 100) {
+        	std::cout << "Error: coordinate must between 0 and 100.\n";
+          	continue;
+        }
+      	break;
+    };
     
     // Build Model.
     RouteModel model{osm_data};
